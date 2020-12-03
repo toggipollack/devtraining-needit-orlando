@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_master_item">
+    <sys_sg_master_item action="INSERT_OR_UPDATE">
+        <condition_order>-1</condition_order>
+        <datasource_table>x_58872_needit_needit</datasource_table>
+        <datasource_table_condition/>
+        <embedded_screen display_value="My Open NeedIt Requests">f0b7fcd507e02010d5dffa9e7c1ed03e</embedded_screen>
+        <item_view display_value="Ny Open NeedIt Requests Item View">b0b778d507e02010d5dffa9e7c1ed05f</item_view>
+        <name>Ny Open NeedIt Requests Master Item</name>
+        <sys_class_name>sys_sg_master_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-17 01:07:55</sys_created_on>
+        <sys_id>34b7fcd507e02010d5dffa9e7c1ed053</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Ny Open NeedIt Requests Master Item</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_sg_master_item_34b7fcd507e02010d5dffa9e7c1ed053</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-19 23:00:50</sys_updated_on>
+    </sys_sg_master_item>
+</record_update>
