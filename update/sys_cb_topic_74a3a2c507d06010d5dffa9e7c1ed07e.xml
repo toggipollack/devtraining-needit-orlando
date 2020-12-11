@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <category display_value="Setup Topics">5628e7f27373230025d032e954f6a7de</category>
+        <connect_queue/>
+        <description>creating a problem</description>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.16",
+  "goals": {
+    "cb62f8d73a444678a3786386467757f9": {
+      "id": "cb62f8d73a444678a3786386467757f9",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "d6db1a905bc2446b85aab2ffd26e798c": {
+          "id": "d6db1a905bc2446b85aab2ffd26e798c",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "c22480f9c7674eb3829f3df8294435a2": {
+          "id": "c22480f9c7674eb3829f3df8294435a2",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "590ee9c3e2ee48a995fb8f09ca0d1bfa": {
+          "id": "590ee9c3e2ee48a995fb8f09ca0d1bfa",
+          "stepType": "CrudAction",
+          "name": "Problem created",
+          "template": "category={{vaInputs.create_problem.category}}^short_description={{vaInputs.create_problem.short_description}}^description={{vaInputs.create_problem.description}}",
+          "mode": "create",
+          "record": "",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "37414d1e55a3443b80f48f6a1b6a7216"
+        },
+        "e9f964c0141d4e5b8392f827b7d6151a": {
+          "id": "e9f964c0141d4e5b8392f827b7d6151a",
+          "stepType": "RecordOutput",
+          "name": "Display problem",
+          "variableId": "8e8344b32b5e49e6bc45d7792dc9636c",
+          "mode": "variable",
+          "tableName": "problem",
+          "fields": [
+            "active",
+            "description",
+            "short_description",
+            "category",
+            "subcategory"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        },
+        "a3c70afedfb3472d96af58a5c7e0841b": {
+          "id": "a3c70afedfb3472d96af58a5c7e0841b",
+          "stepType": "CrudAction",
+          "name": "Create problem",
+          "template": "category={{vaInputs.problem_created.category}}^subcategory={{vaInputs.problem_created.subcategory}}^short_description={{vaInputs.problem_created.short_description}}",
+          "mode": "create",
+          "record": "",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "30ec28fec9414f9eb44894fc39b27fe7"
+        }
+      },
+      "edges": [
+        {
+          "id": "c541f8c6e7a44b7fb9e0d5cf9d7f6a12",
+          "edgeType": "Edge",
+          "source": "d6db1a905bc2446b85aab2ffd26e798c",
+          "target": "a3c70afedfb3472d96af58a5c7e0841b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ff47d32d9cf240959ea4d2cb061fdfb5",
+          "edgeType": "Edge",
+          "source": "590ee9c3e2ee48a995fb8f09ca0d1bfa",
+          "target": "e9f964c0141d4e5b8392f827b7d6151a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "39def4e0596d46b48f1ef70de2d531ee",
+          "edgeType": "Edge",
+          "source": "e9f964c0141d4e5b8392f827b7d6151a",
+          "target": "c22480f9c7674eb3829f3df8294435a2",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f96dba51ba3f45f8a830c20d89b6f0ec",
+          "edgeType": "Edge",
+          "source": "a3c70afedfb3472d96af58a5c7e0841b",
+          "target": "590ee9c3e2ee48a995fb8f09ca0d1bfa",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "37414d1e55a3443b80f48f6a1b6a7216": {
+      "id": "37414d1e55a3443b80f48f6a1b6a7216",
+      "name": "problem_created",
+      "label": "Problem Created",
+      "varType": "reference",
+      "table": "problem",
+      "inactive": false,
+      "category": "vaInputs"
+    },
+    "30ec28fec9414f9eb44894fc39b27fe7": {
+      "id": "30ec28fec9414f9eb44894fc39b27fe7",
+      "name": "create_problem",
+      "label": "Create Problem",
+      "varType": "reference",
+      "table": "problem",
+      "inactive": false,
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>Create Problem,problem</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>Create Problem</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-04 04:05:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>74a3a2c507d06010d5dffa9e7c1ed07e</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Create Problem</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_74a3a2c507d06010d5dffa9e7c1ed07e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-04 04:48:39</sys_updated_on>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=74a3a2c507d06010d5dffa9e7c1ed07e"/>
+</record_update>
